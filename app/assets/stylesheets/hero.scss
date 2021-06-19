@@ -1,0 +1,236 @@
+.call-to-action {
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  height: 20%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.call-to-action-title {
+  font-family: Montserrat;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 700;
+  //   margin-bottom: 1rem;
+}
+
+.tag-line {
+  font-family: Montserrat;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 400;
+  //   margin-bottom: 0.5rem;
+}
+
+.action-button {
+  padding: 2% 3%;
+  font-family: Montserrat;
+  font-size: 1rem;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  border: none;
+  background-color: var(--olive);
+  text-decoration: none;
+  width: 20%;
+  transition: transform 0.35s ease;
+  white-space: nowrap;
+  min-width: fit-content;
+}
+
+.action-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+
+.action-button:active{
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.info-container {
+  display: flex;
+  padding: 3% 15%;
+}
+
+@media only screen and(max-width:875px) {
+  .info-container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .info-pic {
+    display: none;
+  }
+
+  .tag-line {
+    font-family: Montserrat;
+    font-size: 1rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 400;
+    width: 50%;
+    line-height: 1.5rem;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.info-blurb {
+  display: flex;
+  flex-direction: column;
+  padding: 0% 5%;
+  flex: 1;
+}
+
+.info-title {
+  font-size: 2rem;
+  font-family: "Montserrat";
+  color: #424242;
+  font-weight: 900;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.info-paragraph {
+  font-family: "Montserrat";
+  line-height: 2rem;
+  color: #525252;
+  padding-top: 5%;
+  text-align: center;
+}
+
+.info-phrase {
+  font-family: "Montserrat";
+  line-height: 2rem;
+  color: rgb(157, 157, 157);
+  text-align: center;
+}
+
+.info-pic {
+  flex: 1;
+}
+.blog {
+  align-self: center;
+  width: 50%;
+  text-align: center;
+  margin-top: 25px;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.feature-background-image {
+  height: 100vh;
+  width: 100vw;
+  object-fit: cover;
+}
+
+.feature-container {
+  position: relative;
+}
+
+.feature-images-container {
+  position: absolute;
+  width: 65%;
+  height: 53%;
+  min-height: 450px;
+  min-width: 850px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  backdrop-filter: blur(8px);
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+@media only screen and(max-width:875px) {
+  .feature-images-container {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 100%;
+    min-height: 100%;
+  }
+}
+
+.feature-card {
+  height: 100%;
+  width: 30%;
+  border-top: 10px solid peachpuff;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.feature-images-container  .feature-card:first-child{
+  border-top: 10px solid teal;
+}
+.feature-card:last-child{
+  border-top: 10px solid var(--dark-olive);
+}
+
+@media only screen and(max-width:875px) {
+  .feature-card {
+    padding: 1rem;
+    width: 100%;
+    height: 33%;
+    border-top: 10px solid peachpuff;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .feature-title {
+    display: none;
+  }
+  .feature-image {
+    object-fit: contain;
+  }
+}
+
+.feature-image {
+  width: 100%;
+  height: 45%;
+  object-fit: cover;
+}
+
+.feature-title {
+  text-align: center;
+  font-weight: 600;
+  font-family: Montserrat;
+  font-size: 1.75rem;
+  color: var(--ui-grey);
+  margin-bottom: 0.5rem;
+  text-decoration: underline;
+}
+
+.feature-description {
+  padding: 0.75rem;
+  font-weight: 600;
+  font-family: Montserrat;
+  font-size: 1rem;
+  color: var(--ui-grey);
+  line-height: 1.5rem;
+}
+
+.feature-button {
+  margin-top: .5rem;
+  background: transparent;
+  z-index: 10;
+  color: var(--olive);
+  border: 1.5px solid var(--olive);
+  transition: all 0.35s ease;
+}
+
+.feature-button:hover {
+  background-color: var(--olive);
+  color: white;
+}
