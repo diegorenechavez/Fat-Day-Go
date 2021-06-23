@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import { HiOutlineMail } from 'react-icons/hi'
 import { AiOutlineArrowLeft} from 'react-icons/ai'
+import { GoogleApiLogin } from '../loginApi/GoogleApiLogin';
 
 export default class Login extends Component {
 
@@ -62,7 +63,7 @@ export default class Login extends Component {
                 </div>
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <h2 className="session-message">Login</h2>
-                    <div className="login-api-links"></div>
+                    <div className="login-api-links"><GoogleApiLogin/></div>
                     { this.renderErrors()}
                     <input type="text" value={this.state.email} onChange={this.handleChange('email')} className="session-input" placeholder={'Email'}/>
                     <input type="password" value={this.state.password} onChange={this.handleChange('password')} className="session-input" placeholder="Password" />

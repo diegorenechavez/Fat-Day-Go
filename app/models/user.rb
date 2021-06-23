@@ -6,6 +6,20 @@ class User < ApplicationRecord
   validates :password, length: { minimum: 6, allow_nil: true }
   validates :password_digest, presence: true
   after_initialize :ensure_session_token
+
+  has_many :blog_posts,
+  foreign_key: :author_id,
+  primary_key: :id,
+  class_name: :BlogPost
+
+  def self.create_from_omniauth(auth)
+    where(email:auth.info.email).first_or_initialze do |user|
+      user.uid = auth.uid
+      user.name = auth.info.name
+      user.email = auth.info.email
+      user.image_url = auth.info.image
+    end 
+  end 
   
 
   def self.find_by_credentials(email, password)

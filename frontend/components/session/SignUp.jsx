@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { AiOutlineArrowLeft } from 'react-icons/ai'
 import { NavLink, Link } from 'react-router-dom';
 import { withRouter } from 'react-router';
+import {GoogleApiLogin } from '../loginApi/GoogleApiLogin'
 
 class SignUp extends Component {
     constructor(props) {
@@ -67,7 +68,7 @@ class SignUp extends Component {
                 </div>
                 <form onSubmit={this.handleSubmit} className="session-form">
                     <h2 className="session-message">Sign Up</h2>
-                    <div className="login-api-links"></div>
+                    <div className="login-api-links"><GoogleApiLogin /></div>
                     {this.renderErrors()}
                     <input type="text" value={this.state.firstname} onChange={this.handleChange('firstname')} className="session-input" placeholder={'First Name'} />
                     <input type="text" value={this.state.lastname} onChange={this.handleChange('lastname')} className="session-input" placeholder={'Last Name'}/>

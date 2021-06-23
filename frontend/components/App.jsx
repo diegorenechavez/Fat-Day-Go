@@ -7,6 +7,8 @@ import Login from './session/LoginContainer';
 import SignUp from './session/SignUpContainer';
 import {AuthRoute, ProtectedRoute} from '../util/routeUtil';
 import DashBoardContainer from "./admin/DashBoardContainer";
+import CreatePost from './admin/PostFormContainer'
+import PostsIndexContainer from "./posts/PostsIndexContainer";
 // import SessionForm from "./session/SessionFormContainer"
 // import LoginForm from "./session/LoginFormContainer"
 // import Splash from "./splash/Splash"
@@ -21,8 +23,12 @@ const App = () => {
       <Switch>
         <AuthRoute  path="/login" component={Login}/>
         <AuthRoute path="/signup" component={SignUp} />
-        <ProtectedRoute path="/dashboard" component={DashBoardContainer } />
+        <Route path="/posts" component={PostsIndexContainer} />
         <Route exact path="/" component={Splash} />
+        <div className="dash-board-interface">
+          <ProtectedRoute className="post-form-pos"   path="/dashboard/createPost" component={CreatePost } />
+          <ProtectedRoute path="/dashboard" component={DashBoardContainer} />
+        </div>
       
       </Switch>
     </div>

@@ -4,18 +4,19 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow-y: scroll;
   margin-top: 10%;
 }
 
 .dashboard-links {
-  width: 50%;
+  width: 15%;
   -webkit-box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-  height: 15%;
+  height: 75%;
   border-radius: 5px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -24,6 +25,11 @@
       -ms-flex-pack: justify;
           justify-content: space-between;
   padding: 2rem;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: fixed;
 }
 
 .dashboard-nav-links {
@@ -42,17 +48,92 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  -webkit-transition: all .35s ease;
-  transition: all .35s ease;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+  text-decoration: none;
 }
 
 .dash-icon {
-  margin-right: .25rem;
+  margin-right: 0.25rem;
 }
 
 .dashboard-nav-links:hover {
   text-decoration: underline;
-  -webkit-transform: translateY(-3px);
-          transform: translateY(-3px);
+  -webkit-transform: translateX(10px);
+          transform: translateX(10px);
+  color: var(--olive);
+}
+
+.dash-board-interface {
+  width: 75%;
+  position: relative;
+  height: 140vh;
+}
+
+.form-wrapper {
+  width: 70%;
+  position: absolute;
+  right: 0%;
+  height: 100%;
+}
+
+.create-post-form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding: 1rem;
+}
+
+.post-input {
+  padding: 0.5rem;
+  border-radius: 5px;
+  font-family: Montserrat;
+  border: 0.5px solid var(--ui-grey);
+  -webkit-box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+          box-shadow: inset 0px 2px 4px rgba(0, 0, 0, 0.1);
+  height: 10%;
+  font-size: 1rem;
+}
+
+.title {
+  height: 5%;
+}
+
+.body {
+  height: 15%;
+}
+
+.action-title {
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 2.5rem;
+  color: var(--olive);
+  font-weight: 700;
+}
+
+.input-label {
+  font-size: 1.25rem;
+  font-family: Montserrat;
+  color: var(--ui-grey);
+  display: block;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.form-button {
+  width: 75%;
+}
+
+.selected-dash-link {
+  -webkit-transform: translateX(20px);
+          transform: translateX(20px);
+  color: var(--olive);
+  text-decoration: underline;
 }
 /*# sourceMappingURL=dashboard.css.map */
