@@ -23,30 +23,29 @@ class Api::BlogPostsController < ApplicationController
 
 
     def create 
-      debugger
         @post = BlogPost.new(post_params)
         @post.author_id = current_user.id
         if current_user.cook == true
             if @post.save
                 render :show
             else 
-                render json: @post.errors.full_messages, status: 404
+                render json: @post.errors.full_messages, status: 422
             end 
         end 
     end 
 
     def destroy
-      @post= post.find(params[:id])
-      if @post.destroy
-        render json: @post.id
-      else 
+      @post= BlogPost.find(params[:id])
+      if current_user.id == @post.author_id && @post.destroy 
+          render json: @post.id
+      else
         render json: @post.errors.full_messages, status: 422
-      end 
+      end
     end
 
   private
 
   def post_params
-    params.require(:blog_post).permit(:title,:body,:ingredients,:equipment_needed,:tips, :directions, :description, :cuisine, :type)
+    params.require(:blog_post).permit(:title,:body,:ingredients,:equipment_needed,:tips, :directions, :description, :cuisine, :food_type)
   end
 end

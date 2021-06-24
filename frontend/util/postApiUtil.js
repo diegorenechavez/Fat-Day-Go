@@ -23,7 +23,7 @@ export const createPost = (blog_post) => {
 export const deletePost = (postId) => {
   return $.ajax({
     method: "DELETE",
-    url: `/api/blog_posts${postId}`,
+    url: `/api/blog_posts/${postId}`,
     
   });
 };

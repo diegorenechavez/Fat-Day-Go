@@ -20,7 +20,14 @@
   -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
           box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
   border-radius: 5px;
-  margin-top: .5rem;
+  margin-top: 0.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .post-wrapper {
@@ -35,26 +42,350 @@
 
 .post-title {
   font-size: 2rem;
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   color: var(--olive);
   font-weight: 600;
   padding: 1rem;
 }
 
 .post-description {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding: 1rem;
   line-height: 2rem;
   margin-bottom: 1rem;
 }
 
 .post-cuisine {
-  font-family: 'Montserrat';
+  font-family: "Montserrat";
   padding-left: 1rem;
   color: #7b7a7a;
 }
 
 #recipe-link {
-  margin-left: .75rem;
+  margin-left: 0.75rem;
+  padding: 1rem 2rem;
+}
+
+.edit-post-button {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  font-size: 1.5rem;
+  color: grey;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.edit-post-button:hover {
+  color: #3a3a3a;
+}
+
+.edit-post-wrapper {
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  position: relative;
+}
+
+.edit-menu {
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 8rem;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  background-color: white;
+  padding: 0.5rem;
+  height: 7rem;
+  border-radius: 5px;
+  right: 1%;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.edit-close-button {
+  cursor: pointer;
+  justify-self: flex-end;
+  color: var(--ui-grey);
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 50%;
+  background-color: #f7f6f6;
+  border: none;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  opacity: 0.4;
+}
+
+.edit-options {
+  color: var(--ui-grey);
+  background-color: transparent;
+  font-family: Montserrat;
+  font-size: 1rem;
+  border: none;
+  padding: 0.5rem;
+}
+
+.edit-options:hover {
+  cursor: pointer;
+  color: var(--light-olive);
+}
+
+.edit-close-button:hover {
+  opacity: 1;
+}
+
+.feeback-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: fixed;
+}
+
+.feedback-menu {
+  background: white;
+  width: 25%;
+  height: 35%;
+  border-radius: 5px;
+  padding: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  position: fixed;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+  z-index: 5;
+}
+
+.feedback-menu > h3 {
+  font-size: 1.75rem;
+  font-family: "Montserrat";
+  color: var(--olive);
+  font-weight: 600;
+  text-align: center;
+  padding: 1rem;
+}
+
+.button-wrapper-feedback {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+.feedback-button {
+  padding: 0.5rem 1rem;
+  font-family: Montserrat;
+  font-size: 1rem;
+  border: 2px solid var(--olive);
+  cursor: pointer;
+  background-color: white;
+  color: var(--olive);
+  border-radius: 5px;
+  font-weight: 400;
+  width: 30%;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+.feedback-button:hover {
+  -webkit-box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+          box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+  background-color: var(--olive);
+  color: white;
+}
+
+.feedback-button:active {
+  -webkit-box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+.delete-post {
+  background-color: var(--olive);
+  color: white;
+  border: none;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  height: 100%;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.lds-ring div {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border: 4px solid #fff;
+  border-radius: 50%;
+  -webkit-animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+          animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+  -webkit-animation-delay: -0.45s;
+          animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+  -webkit-animation-delay: -0.3s;
+          animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+  -webkit-animation-delay: -0.15s;
+          animation-delay: -0.15s;
+}
+
+@-webkit-keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes lds-ring {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+.show-confirm-screen {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: lightgray;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.confirmation-wrapper {
+  height: 50%;
+  width: 30%;
+  background-color: white;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 2rem;
+  -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+.action-header {
+  font-size: 2rem;
+  font-family: "Montserrat";
+  font-weight: 600;
+  color: var(--olive);
+  text-align: center;
+}
+
+.create-link-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+.secondary {
+  background-color: transparent;
+  border: 2px solid var(--olive);
+  padding: 1rem 0.5rem;
+  color: var(--olive);
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+.secondary:hover {
+  background-color: var(--olive);
+  border: none;
+  color: white;
+}
+
+.new-post {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  align-items: center;
 }
 /*# sourceMappingURL=posts.css.map */
