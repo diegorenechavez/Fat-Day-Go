@@ -51,7 +51,7 @@ export default function PostIndexItem(props) {
         return (
             <div className="edit-menu">
                 <button className="edit-close-button" onClick={()=>setMenu(false) }>✕</button>
-                <button className="edit-options">Edit Post</button>
+                <Link className="edit-options" to={`dashboard/posts/edit/${props.post.id}`} style={{textDecoration:"none"}}>Edit Post</Link>
                 <button className="edit-options" onClick={() => handleFeedback()}>Delete Post</button>
             </div>
         )

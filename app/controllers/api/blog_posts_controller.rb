@@ -10,13 +10,15 @@ class Api::BlogPostsController < ApplicationController
     end 
 
     def update
-      @post = BlogPost.find_by(id: params[:id])
-      if current_user.cook == true
+      @post = BlogPost.find(params[:id])
+      if current_user.cook == true && @post.author_id == current_user.id
         if @post.update(post_params)
             render :show
         else
-        render json: @post.errors.full_messages, status: 422
+
+          render json: @post.errors.full_messages, status: 422
         end 
+        
       end 
     end
 

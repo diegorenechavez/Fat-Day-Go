@@ -28,10 +28,11 @@ export const deletePost = (postId) => {
   });
 };
 
-export const updatePost = (post) => {
+export const updatePost = (blog_post) => {
+ 
   return $.ajax({
     method: "PATCH",
-      url: `/api/blog_post${post.id}`,
-    data:{post}
+    url: `/api/blog_posts/${blog_post.id}`,
+    data:{blog_post}
   });
 };
