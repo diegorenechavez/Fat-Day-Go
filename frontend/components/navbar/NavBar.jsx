@@ -125,7 +125,8 @@ handleScroll = () => {
                     <NavLink className="nav-links" style={{color: this.colorToggle()}} to="/posts">Blog</NavLink>
                     <NavLink className="nav-links"  style={{color: this.colorToggle()}}to="/">Gallery</NavLink>
                     <NavLink className="nav-links" style={{color: this.colorToggle()}} to="/">Mystery Meals</NavLink>
-                    <NavLink className="nav-links"  style={{color: this.colorToggle()}}to="/">Contact Me</NavLink>
+                    <NavLink className="nav-links" style={{ color: this.colorToggle() }} to="/">Contact Me</NavLink>
+                    {this.props.currentUserName.cook ? <NavLink className='nav-links' to="/dashboard">Dashboard</NavLink> :null}
 
                 </div>
                 <div className="nav-right">
